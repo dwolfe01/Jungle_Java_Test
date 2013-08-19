@@ -32,7 +32,7 @@ public class ZooService {
 //		foods.put("orange", new Food("orange", 60, false));
 //		foods.put("banana", new Food("banana", 110, false));
 //		foods.put("deadly nightshade", new Food("deadly_nightshade", 15, true));
-//		foods.put("avocado pear", new Food("avocado pear", 60, false));
+//		foods.put("avocado pear",iThis new Food("avocado pear", 60, false));
 //		foods.put("rhubarb leaves", new Food("rhubarb leaves", 30, true));
 //		animals.put("Peter", new Lion("Peter"));
 //	}
