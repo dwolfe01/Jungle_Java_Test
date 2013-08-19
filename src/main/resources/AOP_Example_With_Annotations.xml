@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                      http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+                      http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd
+                      http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+                      http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd"
+default-init-method="init">
+
+<aop:aspectj-autoproxy/>
+
+<bean id="canEatAspect" class="aspect.CanEatAspect" lazy-init="true" />
+
+<bean id="orange" class="domain.Food">
+	<constructor-arg value="orange"/>
+	<constructor-arg value="60"/>
+	<constructor-arg value="false"/>
+</bean>
+<bean id="deadly_nightshade" class="domain.Food">
+	<constructor-arg value="deadly_nightshade"/>
+	<constructor-arg value="15"/>
+	<constructor-arg value="true"/>
+</bean>
+<bean id="beef_steak" class="domain.Food">
+	<constructor-arg value="beef_steak"/>
+	<constructor-arg value="430"/>
+	<constructor-arg value="false"/>
+</bean>
+<bean id="lion" class="domain.Lion">
+	<constructor-arg value="Spartacus"/>
+</bean>
+
+<bean id="foods" class="java.util.HashMap">
+	<constructor-arg>
+	<map>
+		<entry key="orange"><ref bean="orange"/></entry>
+	</map>
+	</constructor-arg>
+</bean>
+
+<bean id="ZooService" class="service.ZooService" lazy-init="true" autowire="constructor" />
+
+</beans>
