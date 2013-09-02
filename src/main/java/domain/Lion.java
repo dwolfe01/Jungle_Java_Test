@@ -1,5 +1,7 @@
 package domain;
 
+import domain.interfaces.DrDolittle;
+
 import annotations.CanEat;
 
 public class Lion extends Animal {
@@ -8,21 +10,21 @@ public class Lion extends Animal {
 		super();
 	}
 
-	public Lion(String name) {
+	public Lion(String name, DrDolittle human) {
 		this.name = name;
 		this.maxNumberOfKcalories = 100;
 	}
 
 	@Override
 	@CanEat
-	public void consume(Food fruit) {
-		super.consume(fruit);
+	public void consume(Food food) {
+		super.consume(food);
 		if (totalKcaloriesConsumed <= maxNumberOfKcalories){
 			printStatus(STATUS.HAS_MORE_CAPACITY);
 		}else{
 			printStatus(STATUS.HAS_EATEN_TOO_MUCH);
 		}
-		if (fruit.isPoisonous()){
+		if (food.isPoisonous()){
 			System.out.println("Peter has been poisoned");
 		}
 	}

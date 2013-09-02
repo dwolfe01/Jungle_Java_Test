@@ -12,5 +12,5 @@ public abstract class Animal {
 		System.out.println(this.name + " is eating: " + food.getName() + " kcalories: " + food.getNumberOfKcalories());
 		totalKcaloriesConsumed += food.getNumberOfKcalories();
 	}
-
+	
 }
